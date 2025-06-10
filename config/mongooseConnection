@@ -17,7 +17,7 @@
 const mongoose = require("mongoose");
 const config = require("config");
 
-const dbUri = config.get("MONGODB_URI"); // already has full URI with DB name and query
+const dbUri = process.env.MONGODB_URI; // already has full URI with DB name and query
 
 mongoose.connect(dbUri)
   .then(() => console.log("Connected to MongoDB Atlas"))
