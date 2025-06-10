@@ -24,6 +24,8 @@ main{
     height: 20vh;
     width: 100vw;
 }
-
+#panel a{
+    cursor: default;
+}
 @media only screen and (max-width: 800px){
 }

@@ -1,15 +1,26 @@
+// const mongoose = require("mongoose");
+// const config=require("config");
+
+// const dgbr = require("debug")("development:mongoose");
+// const dbUri=`${config.get("MONGODB_URI")}/pandori`;
+
+// const connection=mongoose.connect(dbUri)
+// .then(function(){
+//     dgbr("connected");
+// })
+// .catch(function(){
+//     dgbr(err);
+// });
+
+// module.exports=connection;
+
 const mongoose = require("mongoose");
-const config=require("config");
+const config = require("config");
 
-const dgbr = require("debug")("development:mongoose");
-const dbUri=`${config.get("MONGODB_URI")}/pandori`;
+const dbUri = config.get("MONGODB_URI"); // already has full URI with DB name and query
 
-const connection=mongoose.connect(dbUri)
-.then(function(){
-    dgbr("connected");
-})
-.catch(function(){
-    dgbr(err);
-});
+mongoose.connect(dbUri)
+  .then(() => console.log("Connected to MongoDB Atlas"))
+  .catch(err => console.error("MongoDB connection error:", err));
 
-module.exports=connection;
+

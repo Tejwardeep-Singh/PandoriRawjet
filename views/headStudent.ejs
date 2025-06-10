@@ -6,22 +6,21 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/ico/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/ico/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/ico/favicon-32x32.png">
-    <link rel="manifest" href="favicorn/site.webmanifest">
+    <link rel="manifest" href="favicon/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Fjalla+One&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="/stylesheets/loginStyle.css">
     <link rel="stylesheet" href="/stylesheets/head.css">
-    <title>GPS PANDORI WARAICH | Student Login </title>
+    <link rel="stylesheet" href="/stylesheets/headStudent.css">
+    <title>GPS PANDORI WARAICH | Teacher Information </title>
 </head>
 <body>
     <main>
         <nav>
             <div class="nl">
-                <img src="/images/images/LOGO.webp" alt="">
+                <img src="/images/images/LOGO.webp" alt="Logo here">
             </div>
             <div class="nr">
                 <div class="nr-l">
@@ -44,59 +43,40 @@
         </nav>  
         <div id="page1">
             <div id="pg1-container">
-                <h1>Add Student</h1>
-                <div id="contact-pg4">
-                    <div class="contact-container registerStudent">
-                        <form action="/studentRegister" method="POST" enctype="multipart/form-data">
-                            <div id="label">
-                                <label for="id">ID: </label>
-                                <input type="number" name="id" id="id" value="<%= user1.id %>" required><br><br>
+                <div id="panel">
+                    <div class="panel_elem" id="hp1"><a href="/head">Personal Information</a></div>
+                </div>
+                <div id="data">
+                    <div class="part" id="studentInformation">
+                        <div class="info" id="studentInfo">
+                            <h1>Student Information</h1>
+                            <div id="image">
+                                <% if (user2 && user2.image) { %>
+                                    <img src="/<%= user2.image %>" alt="User2 Image" />
+                                <% } %>
                             </div>
-                            <div id="label">
-                                <label for="name">Name: </label>
-                                <input type="text" id="name" name="name" value="<%= user1.name %>" required><br><br>
                             </div>
-                            <div id="label">
-                                <label for="class">Class: </label>
-                                <input type="number" id="section" name="section"required><br><br>     
+                            <div class="infoElem">
+                                <h2>Name:</h2>
+                                <h3><%=user2.name%></h2>
                             </div>
-                            <div id="label">
-                                <label for="fatherName">Father Name:</label>
-                            <input type="text" id="fatherName" name="fatherName" value="<%= user1.fatherName %>" required><br><br>
+                            <div class="infoElem">
+                                <h2>Father Name:</h2>
+                                <h3><%=user2.fatherName%>
                             </div>
-                            <div id="label">
-                                <label for="motherName">Mother  Name:</label>
-                            <input type="text" id="motherName" name="motherName" value="<%= user1.motherName %>" required><br><br>
+                            <div class="infoElem">
+                                <h2>Date Of Birth:</h2>
+                                <h3><%=user2.dob%></h2>
                             </div>
-                            <div id="label">
-                                <label for="city">City:</label>
-                            <input type="text" id="city" name="city" value="<%= user1.city %>" required><br><br>
+                            <div class="infoElem">
+                                <h2>Mobile:</h2>
+                                <h3><%=user2.mobile%></h2>
                             </div>
-                            <div id="label">
-                                <label for="state">State:</label>
-                            <input type="text" id="state" name="state" value="<%= user1.state %>" required><br><br>
+                            <div class="infoElem">
+                                <h2>Email:</h2>
+                                <h3><%=user2.email%></h2>
                             </div>
-                            <div id="label"> 
-                                <label for="dob">Date Of Birth: </label>
-                                <input type="date" id="dob" name="dob" value="<%= user1.dob %>" required><br><br></div>
-                            <div id="label">
-                                <label for="age">Age: </label>
-                            <input type="number" id="age" name="age" value="<%= user1.age %>" required><br><br>
-                            </div>
-                            <div id="label">
-                                <label for="mobile"> Mobile: </label>
-                            <input type="number" id="mobile" name="mobile" value="<%= user1.mobile%>" required><br><br>
-                            </div>
-                            <div id="label">
-                                <label for="email">Email: </label>
-                            <input type="email" id="email" name="email" value="<%= user1.email %>" required><br><br>
-                            </div>
-                            <div id="label">
-                                <label for="Photo">Photo: </label>
-                                <input type="file" name="image" accept="image/*" />
-                            </div>
-                            <button type="submit">SUBMIT</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -136,6 +116,7 @@
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/javascripts/headScript.js"></script>
 <script src="/javascripts/script.js"></script>
 </body>
 </html>

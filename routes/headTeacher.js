@@ -5,6 +5,7 @@ const headTeacherRouter = express.Router();
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const teacherDetails = require('../models/teacherModel');
+const studentDetails = require('../models/studentModel');
 const headDetails = require('../models/headDetails');
 
 // Set up multer storage configuration
@@ -78,6 +79,38 @@ headTeacherRouter.get('/', async function(req, res) {
                 user: head || {},
                 message: null,
                 error: "Teacher not found."
+            }); 
+        }
+    } catch (err) {
+        res.status(500).send('Error fetching data: ' + err.message);
+    }
+});
+headTeacherRouter.get('/studentDetails', async function(req, res) {
+    const { kaksha1,id, message, error } = req.query;
+
+    try {
+        const student = id ? await studentDetails.findOne({ id: id }) : null;
+        const head = await headDetails.findOne();
+
+        // Render 'headTeacher' only if student is fetched
+        if (student) {
+            res.render('headStudent', {
+                user2: student,     // student details
+                user1: {},  
+                leave:{},        // Optional
+                user: head || {},   // Head details
+                message: message || null,
+                error: null
+            });
+        } else {
+            // student not found — optionally render head page with head info
+            res.render('head', {
+                user1: {}, 
+                user2: {}, 
+                leave:{},
+                user: head || {},
+                message: null,
+                error: "student not found."
             }); 
         }
     } catch (err) {

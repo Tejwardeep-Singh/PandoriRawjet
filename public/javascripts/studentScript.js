@@ -1,7 +1,7 @@
 function studentPanel(){
     var details=document.querySelector("#details")
     details.addEventListener("click",function(){
-        gsap.to(".part_elem",{
+        gsap.to(".part",{
             display:'none',
             duration:0.5,
         })
@@ -14,25 +14,6 @@ function studentPanel(){
             duration:0.5,
         })
         gsap.to("#details ",{
-            color:"#111",
-            duration:0.5
-        })
-    })
-    var changePassword=document.querySelector("#changePassword")
-    changePassword.addEventListener("click",function(){
-        gsap.to(".part",{
-            display:'none',
-            duration:0.5,
-        })
-        gsap.to("#panel h2",{
-            color:"#4E3629",
-            duration:0.5
-        })
-        gsap.to("#changePassword",{
-            display:'flex',
-            duration:0.5,
-        })
-        gsap.to("#changePassword ",{
             color:"#111",
             duration:0.5
         })
@@ -66,11 +47,11 @@ function studentPanel(){
             color:"#4E3629",
             duration:0.5
         })
-        gsap.to("#leaveRequest",{
+        gsap.to("#leaveRequestBox",{
             display:'flex',
             duration:0.5,
         })
-        gsap.to("#leaveRequest ",{
+        gsap.to("#leaveRequest",{
             color:"#111",
             duration:0.5
         })
@@ -85,11 +66,11 @@ function studentPanel(){
             color:"#4E3629",
             duration:0.5
         })
-        gsap.to("#editDetails",{
+        gsap.to("#marks",{
             display:'flex',
             duration:0.5,
         })
-        gsap.to("#marks ",{
+        gsap.to("#marks",{
             color:"#111",
             duration:0.5
         })
@@ -104,11 +85,30 @@ function studentPanel(){
             color:"#4E3629",
             duration:0.5
         })
-        gsap.to("#changePassword",{
+        gsap.to("#editDetails",{
             display:'flex',
             duration:0.5,
         })
         gsap.to("#editDetails ",{
+            color:"#111",
+            duration:0.5
+        })
+    })
+    var changePassword=document.querySelector("#changePassword")
+    changePassword.addEventListener("click",function(){
+        gsap.to(".part",{
+            display:'none',
+            duration:0.5,
+        })
+        gsap.to("#panel h2",{
+            color:"#4E3629",
+            duration:0.5
+        })
+        gsap.to("#changePasswordBox",{
+            display:'flex',
+            duration:0.5,
+        })
+        gsap.to("#changePassword",{
             color:"#111",
             duration:0.5
         })

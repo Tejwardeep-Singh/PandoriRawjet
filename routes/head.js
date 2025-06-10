@@ -23,6 +23,7 @@ const upload = multer({ storage: storage });
 headRouter.post('/', upload.single('image'), function(req, res) {
     const { name, fatherName, dob, dateOfJoining, mobile, email } = req.body;
     const image = req.file ? req.file.path : null;  // Image path if uploaded, otherwise null
+    const leave = leaveRequestTeacher.find({status:"pending"}); 
     HeadDetails.findOneAndUpdate(
                 {name},
                 {
@@ -41,6 +42,7 @@ headRouter.post('/', upload.single('image'), function(req, res) {
             user: updatedUser,
             user1:{},
             user2:{},
+            leave,
             message: 'User updated successfully!',
             error: null,
         });
@@ -50,6 +52,7 @@ headRouter.post('/', upload.single('image'), function(req, res) {
             user: req.body,
             user1:{},
             user2:{},
+            leave:{},
             message: null,
             error: 'Error updating user: ' + err.message,
         });
@@ -60,7 +63,7 @@ headRouter.post('/', upload.single('image'), function(req, res) {
 headRouter.get('/', async function(req, res) {
     try {
         const headDetails = await HeadDetails.findOne();
-        const leave = await leaveRequestTeacher.find({status:"pending"}); // Await the result
+        const leave = await leaveRequestTeacher.find({status:"pending"}); 
         const subjects = await subject.find();
         const sections= await section.find();
         if (!headDetails) {
@@ -70,7 +73,7 @@ headRouter.get('/', async function(req, res) {
             user: headDetails,
             user1: {},
             user2: {},
-            leave, // now this is an actual array
+            leave,
             subjects,
             sections,
             error: null,

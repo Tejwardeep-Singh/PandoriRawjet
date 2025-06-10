@@ -48,17 +48,12 @@ teacherRouter.post("/", upload.single("image"), async (req, res) => {
             { new: true} 
         );
 
-        res.render("teacher", {
-            teacher: updatedUser,
-            message: "User updated successfully!",
-            error: null,
-        });
+        res.redirect('/teacher');
     } catch (err) {
         console.error("JWT or DB error:", err.message);
         return res.redirect("/teacherLogin");
     }
 });
-
 
 // GET / — Fetch and render teacher details
 teacherRouter.get("/", async (req, res) => {

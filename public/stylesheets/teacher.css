@@ -237,27 +237,7 @@ form button{
     border-radius: 20px;
     padding:1%;
 }
-#image{
-    height: 20vh;
-    width: 15vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5%;
-    border: solid #4E3629 2px;
-    border-radius: 20px;
-}
-#image img{
-    object-fit: cover;
-    object-position: center;
-    height: 100%;
-    width: 100%;
-    border-radius: 20px;
-}
-#imageElem{
-    justify-content: center;
-    border: 0px;
-}
+
 #exam{
     display: none;
 }
@@ -348,5 +328,41 @@ display: none;
     }   
     #data{
         margin-top: 50%;
+    }
+    .panel h2{
+        font-size: 2vh;
+    }
+    #studentPanel{
+        overflow: visible;
+        width: 80%;
+
+    }
+    #studentPanel h2,#studentPanel a
+    {
+        font-size: 2vh;
+    }
+    #studentInput form{
+        width: 100%;
+        align-self: center;
+    }
+    #studentShow1 h1{
+        font-size: 3vh;
+    }
+    #studentShow1 img{
+        width: 100%;
+    }
+    #imageElem{
+        height: auto;
+        width: auto;
+        align-self: center;
+        padding: 1%;
+    }
+    #imageElem img{
+        height: auto;
+        width: auto;
+        border-radius: 20px;
+        margin: 0;
+        padding: 0;
+
     }
 }

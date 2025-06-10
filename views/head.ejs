@@ -156,11 +156,16 @@
                         </div>
                     </div>
                     <div class="part" id="studentInformation">
+                        <h2>Student Information</h2>
                         <div id="studentInput">
-                            <form action="/headTeacher" method="get" enctype="multipart/form-data">
+                            <form action="/headTeacher/studentDetails" method="get" enctype="multipart/form-data">
                                 <div id="label" id="studentLabel">
-                                    <label for="class"> CLASS: </label>
-                                    <input type="number" id="class" name="class"required><br><br>     
+                                    <label for="kaksha1"> CLASS: </label>
+                                    <input type="number" id="kaksha1" name="kaksha1"required><br><br>     
+                                </div>
+                                <div id="label" id="studentLabel">
+                                    <label for="id">ID: </label>
+                                    <input type="number" name="id"required><br><br>     
                                 </div>
                                 <button type="submit">SHOW</button>
                             </form>
@@ -302,6 +307,10 @@
                                 <div id="classAdd" class="add">
                                     <h2>Add Class</h2>
                                     <form action="/class" method="POST">
+                                        <div id="label">
+                                            <label for="id">Id: </label>
+                                            <input type="number" name="id" value="<%= sections.id%>" required><br><br>
+                                        </div>
                                         <div id="label">
                                             <label for="name">Class: </label>
                                             <input type="text" id="name" name="name" value="<%= sections.name %>" required><br><br>

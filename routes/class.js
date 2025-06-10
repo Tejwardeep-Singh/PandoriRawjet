@@ -4,8 +4,8 @@ const classSection = require("../models/class");
 const teacherDetails = require("../models/classIncharge");
 
 sectionRouter.post("/",function(req,res){
-    const {name,section}=req.body;
-    const sections =  new classSection({name:name,section:section});
+    const {id,name,section}=req.body;
+    const sections =  new classSection({id:id,name:name,section:section});
     sections.save();
     res.redirect('/head');
 })

@@ -5,6 +5,9 @@ const studentDetailsSchema = mongoose.Schema({
     name:{
         type:String,
     },
+    class:{
+        type:mongoose.Schema.Types.ObjectId,ref:'class'
+    },
     fatherName:{
         type:String,
     },
@@ -30,9 +33,6 @@ const studentDetailsSchema = mongoose.Schema({
     },
     subjects:{
         type:mongoose.Schema.Types.ObjectId,ref:'subjects'
-    },
-    class:{
-        type:mongoose.Schema.Types.ObjectId,ref:'class'
     },
     marks:{
         type:mongoose.Schema.Types.ObjectId,ref:'marks'

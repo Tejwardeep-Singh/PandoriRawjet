@@ -26,6 +26,7 @@ studentRegisterRouter.post("/", upload.single('image'), async function (req, res
         const {
             id,
             name,
+            section,
             fatherName,
             motherName,
             city,
@@ -48,6 +49,7 @@ studentRegisterRouter.post("/", upload.single('image'), async function (req, res
         const student = new studentModel({
             id,
             name,
+            class:section,
             fatherName,
             motherName,
             city,

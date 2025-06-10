@@ -13,7 +13,7 @@ studentRouter.post('/studentLogin', async (req, res) => {
         let student = await studentModel.findOne({ id: Number(id) });
 
         if (!student) {
-            return res.status(400).send("Teacher not found");
+            return res.status(400).send("student not found");
         }
 
         const isPasswordValid = await bcrypt.compare(password, student.password);

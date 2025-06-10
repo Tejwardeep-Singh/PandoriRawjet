@@ -119,6 +119,16 @@ nav{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
+}
+#index-page video{
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index:997;
+
 }
 #title{
     height:fit-content;
@@ -126,9 +136,9 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1vw;
     padding: 1%;
     overflow: hidden;
+    z-index: 998;
 }
 #title-2{
     height: fit-content;
@@ -137,6 +147,7 @@ nav{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 800;
     color:#201713;
+    z-index: 998;
 }
 .title.elem{
     height: 100%;
@@ -224,13 +235,13 @@ nav{
 #page4-blur{
     width: 100%;
     height: 4vh;
-    background:linear-gradient(to bottom,black,transparent);
+    background:linear-gradient(to bottom,#808000,transparent);
 }
 
 #page3-blur{
     width: 100%;
     height: 4vh;
-    background:linear-gradient(to top,black,transparent);
+    background:linear-gradient(to top,#808000,transparent);
 }
 
 #page2-blur{
@@ -272,7 +283,7 @@ nav{
     opacity: 1; 
 }
 
-#rh{
+#rh{    
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -300,6 +311,13 @@ nav{
     font-size: 7vh;
     color: black;
 }
+#page4 h1{
+    font-family: "Fjalla One", sans-serif;;
+    font-weight: 800;
+    text-decoration: underline;
+    font-size: 7vh;
+    color: black;
+}
 
 #page4{
     display: flex;
@@ -308,7 +326,7 @@ nav{
     align-items: center;
     width: 100vw;
     padding: 0 0 2% 0;
-    background-color: black;
+    background-color:#808000;
 }
 
 #moving-div{
@@ -339,7 +357,7 @@ nav{
     top: 0;
     left: 0;
     z-index: 2;
-    background: linear-gradient(to right,black,transparent);
+    background: linear-gradient(to right,#808000,transparent);
 }
 
 .blur-right{
@@ -349,7 +367,7 @@ nav{
     top: 0;
     right: 0;
     z-index: 2;
-    background: linear-gradient(to right,transparent,black);
+    background: linear-gradient(to right,transparent,#808000);
 }
 
 #page4a{
@@ -583,7 +601,7 @@ nav{
         width: 80vw;
     }
     .nr a{
-        font-size: 4vw;
+        font-size: 3vw;
         -webkit-text-stroke: solid black 0.2px;
     }
     .nr{

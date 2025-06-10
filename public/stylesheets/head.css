@@ -186,6 +186,9 @@
         border-radius: 25px;
         padding: 2%;
     }
+    #teacherInformation1{
+        display: flex;
+    }
     #teacherPanel{
         height: 5vh;
         width: 50%;
@@ -195,7 +198,6 @@
         background-color: #FFF5E1;
         border-radius: 50px;
         border: solid #4E3629 2px;
-        overflow-x: scroll;
         flex-wrap: nowrap;
         gap: 2vh;
     }
@@ -418,5 +420,85 @@
         
         #panel a{
             font-size: medium;
+        }
+        .info{
+            justify-content: center;
+            align-items: center;
+        }
+        #imageElem{
+            height: auto;
+            width:auto;
+            align-self: center;
+        }
+        #image{
+            height: auto;
+            width: auto;
+            padding: 0;
+        }
+        #imageElem img{
+            height: 100%;
+            width: 100%;
+            padding: 0;
+        }
+        #teacherPanel{
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 1vh;
+        }
+        #teacherPanel h2{
+            font-size: 2.5vh;
+        }
+        #teacherBox{
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        #teacherInput{
+            width: 100%;
+            align-self: center;
+        }
+        #teacherInput form{
+            width: 100%;
+            align-self: center;
+        }
+        #teacherAdd{
+            width: 100%;
+            align-self: center;
+        }
+        #teacherAdd form{
+            width: 100%;
+            align-self: center;
+        }
+        #studentInput{
+            width: 100%;
+            align-self: center;
+        }
+        #studentInput form{
+            width: 100%;
+            align-self: center;
+        }
+        .infoElem h2{
+            font-size: 1vh;
+        }
+        .infoElem h3{
+            font-size: 0.5vh;
+        }
+        #adminPanel h2{
+            font-size: 1.5vh;
+        }
+        .part form{
+            width: 100%;
+            align-self: center;
+        }
+        #teacherShow1 h1{
+            font-size: 3vh;
+        }
+        #teacherShow1 h2{
+            font-size: 2vh;
+        }
+        #teacherShow1 h3{
+            font-size: 1.5vh;
         }
     }
