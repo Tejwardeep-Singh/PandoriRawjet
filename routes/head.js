@@ -1,7 +1,7 @@
 const express = require("express");
 const headRouter = express.Router();
 const HeadDetails = require('../models/headDetails');
-const upload = require("../config/cloudinaryUpload");
+const upload = require("../config/cloudinaryupload");
 const { leaveRequestTeacher } = require("../models/leaveRequest");
 const subject = require("../models/subject");
 const section = require("../models/class");
