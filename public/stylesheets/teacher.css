@@ -292,6 +292,28 @@ display: none;
 #studentInformation1{
     display: flex;
 }
+#image{
+    height: 30vh;
+    width: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid #4E3629 2px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#image img{
+    object-fit:cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#imageElem{
+    justify-content: center;
+    border: 0px;
+}
 @media only screen and (max-width: 800px)
 {
     #panel{
@@ -351,18 +373,14 @@ display: none;
     #studentShow1 img{
         width: 100%;
     }
-    #imageElem{
-        height: auto;
-        width: auto;
-        align-self: center;
-        padding: 1%;
+    #image{
+        height: 15vh;
+        width: 15vh;
+        overflow: hidden;
     }
-    #imageElem img{
-        height: auto;
-        width: auto;
-        border-radius: 20px;
-        margin: 0;
-        padding: 0;
-
+    #image img{
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
     }
 }

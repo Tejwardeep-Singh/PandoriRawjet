@@ -1,13 +1,13 @@
 const express = require("express");
 const headRouter = express.Router();
 const HeadDetails = require('../models/headDetails');
-const upload = require("../config/cloudinaryupload");
+const { uploadHead} = require("../config/cloudinaryupload");
 const { leaveRequestTeacher } = require("../models/leaveRequest");
 const subject = require("../models/subject");
 const section = require("../models/class");
 
 // POST route with cloud upload
-headRouter.post('/', upload.single('image'), async function (req, res) {
+headRouter.post('/', uploadHead.single('image'), async function (req, res) {
     try {
         const { name, fatherName, dob, dateOfJoining, mobile, email } = req.body;
         const image = req.file ? req.file.path : null; 

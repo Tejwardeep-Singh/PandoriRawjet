@@ -1,26 +1,16 @@
-require('dotenv').config(); //  Load environment variables at the top
+require('dotenv').config(); // Load environment variables at the top
 
 const express = require("express");
-const multer = require("multer");
-const path = require("path");
 const jwt = require("jsonwebtoken");
 const teacherRouter = express.Router();
 const teacherDetails = require("../models/teacherModel");
-const {leaveRequestStudent,leaveRequestTeacher} = require("../models/leaveRequest")
+const { leaveRequestStudent, leaveRequestTeacher } = require("../models/leaveRequest");
 
-// Multer storage config
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, "uploads/"); // Make sure this folder exists
-    },
-    filename: function (req, file, cb) {
-        cb(null, Date.now() + path.extname(file.originalname)); // Unique filename
-    },
-});
-const upload = multer({ storage: storage });
+// Cloudinary upload setup
+const { uploadTeacher } = require("../config/cloudinaryupload");
 
-// POST / — Update or create teacher details
-teacherRouter.post("/", upload.single("image"), async (req, res) => {
+// POST / — Update or create teacher details with image upload
+teacherRouter.post("/", uploadTeacher.single("image"), async (req, res) => {
     const token = req.cookies.token;
 
     if (!token) {
@@ -32,7 +22,7 @@ teacherRouter.post("/", upload.single("image"), async (req, res) => {
         const login_id = decoded.login_id;
 
         const { name, fatherName, dob, dateOfJoining, mobile, email } = req.body;
-        const image = req.file ? req.file.path : null;
+        const image = req.file ? req.file.path : null; // This will be Cloudinary URL
 
         const updatedUser = await teacherDetails.findOneAndUpdate(
             { login_id: login_id },
@@ -43,12 +33,12 @@ teacherRouter.post("/", upload.single("image"), async (req, res) => {
                 dateOfJoining,
                 mobile,
                 email,
-                ...(image && { image }), // Only update image if provided
+                ...(image && { image }) // Only update image if uploaded
             },
-            { new: true} 
+            { new: true }
         );
 
-        res.redirect('/teacher');
+        res.redirect("/teacher");
     } catch (err) {
         console.error("JWT or DB error:", err.message);
         return res.redirect("/teacherLogin");
@@ -69,7 +59,7 @@ teacherRouter.get("/", async (req, res) => {
 
         const teacher = await teacherDetails.findOne({ login_id: login_id });
         const leave = await leaveRequestStudent.find();
-        const teacherLeaveDetails = await leaveRequestTeacher.find({id:login_id})
+        const teacherLeaveDetails = await leaveRequestTeacher.find({ id: login_id });
 
         if (!teacher) {
             return res.status(404).send("Teacher not found");
@@ -77,9 +67,9 @@ teacherRouter.get("/", async (req, res) => {
 
         res.render("teacher", {
             user: teacher,
-            user1:{},
-            user2:{},
-            apply:{},
+            user1: {},
+            user2: {},
+            apply: {},
             leave,
             teacherLeaveDetails,
             message: null,
@@ -92,3 +82,4 @@ teacherRouter.get("/", async (req, res) => {
 });
 
 module.exports = teacherRouter;
+

@@ -11,14 +11,33 @@ cloudinary.config({
     api_secret: process.env.CLOUD_API_SECRET
 });
 // Multer + Cloudinary storage setup
-const storage = new CloudinaryStorage({
+const storageHead = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
-        folder: "headImages",           // Optional folder name in Cloudinary
+        folder: "headImages", // Optional folder name in Cloudinary
         allowed_formats: ["jpg", "png", "jpeg"]
     }
 });
+const storageTeachers = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    params: {
+        folder: "teacherImages", // Optional folder name in Cloudinary
+        allowed_formats: ["jpg", "png", "jpeg"]
+    }
+});
+const storageStudents = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    params: {
+        folder: "studentImages", // Optional folder name in Cloudinary
+        allowed_formats: ["jpg", "png", "jpeg"]
+    }
+});
+const uploadHead = multer({ storage: storageHead });
+const uploadTeacher = multer({ storage: storageTeachers });
+const uploadStudent = multer({ storage: storageStudents })
 
-const upload = multer({ storage });
-
-module.exports = upload;
+module.exports = {
+    uploadHead,
+    uploadTeacher,
+    uploadStudent
+};
