@@ -3,9 +3,11 @@ const multer = require('multer');
 const path = require('path');
 const headRouter = express.Router();
 const HeadDetails = require('../models/headDetails');
+const headModel = require('../models/headModel');
 const {leaveRequestTeacher} = require("../models/leaveRequest")
 const subject= require("../models/subject")
 const section= require("../models/class")
+const saltRounds = 10;
 
 // Set up multer storage configuration
 const storage = multer.diskStorage({
@@ -18,6 +20,8 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
+
+
 
 // POST route to update or create head details with image upload
 headRouter.post('/', upload.single('image'), function(req, res) {

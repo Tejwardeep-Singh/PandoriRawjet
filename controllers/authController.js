@@ -14,7 +14,7 @@ router.post('/headLogin', async (req, res) => {
         let head = await headModel.findOne({id});
 
         if (!head) {
-            return res.status(400).send("Email incorrect"); // Proper error response
+            return res.status(400).send("username incorrect"); // Proper error response
         }
 
         // Compare the password
