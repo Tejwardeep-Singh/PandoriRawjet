@@ -42,14 +42,7 @@ headRouter.post('/', upload.single('image'), function(req, res) {
                 { new: true, upsert: true }
             )
     .then(updatedUser => {
-        res.render('head', {
-            user: updatedUser,
-            user1:{},
-            user2:{},
-            leave,
-            message: 'User updated successfully!',
-            error: null,
-        });
+        res.redirect("/head");
     })
     .catch(err => {
         res.render('head', {
