@@ -24,37 +24,40 @@ const upload = multer({ storage: storage });
 
 
 // POST route to update or create head details with image upload
-headRouter.post('/', upload.single('image'), function(req, res) {
+headRouter.post('/', upload.single('image'), async function(req, res) {
     const { name, fatherName, dob, dateOfJoining, mobile, email } = req.body;
-    const image = req.file ? req.file.path : null;  // Image path if uploaded, otherwise null
-    const leave = leaveRequestTeacher.find({status:"pending"}); 
-    HeadDetails.findOneAndUpdate(
-                {name},
-                {
-                    name,
-                    fatherName,
-                    dob,
-                    dateOfJoining,
-                    mobile,
-                    email,
-                    image
-                },
-                { new: true, upsert: true }
-            )
-    .then(updatedUser => {
-        res.redirect("/head");
-    })
-    .catch(err => {
+    const image = req.file ? req.file.path : null;
+
+    try {
+        const leave = await leaveRequestTeacher.find({ status: "pending" });
+
+        const updatedUser = await HeadDetails.findOneAndUpdate(
+            { name },
+            { name, fatherName, dob, dateOfJoining, mobile, email, image },
+            { new: true, upsert: true }
+        );
+
+        res.render('head', {
+            user: updatedUser,
+            user1: {},
+            user2: {},
+            leave,
+            message: 'User updated successfully!',
+            error: null,
+        });
+    } catch (err) {
+        console.error("Error updating user:", err);
         res.render('head', {
             user: req.body,
-            user1:{},
-            user2:{},
-            leave:{},
+            user1: {},
+            user2: {},
+            leave: [],
             message: null,
             error: 'Error updating user: ' + err.message,
         });
-    });
+    }
 });
+
 
 // GET route to show head details form
 headRouter.get('/', async function(req, res) {
