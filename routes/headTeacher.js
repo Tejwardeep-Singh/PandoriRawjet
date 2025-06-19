@@ -53,6 +53,19 @@ headTeacherRouter.post('/', upload.single('image'), async function(req, res) {
         res.redirect(`/head?error=${encodeURIComponent(err.message)}`);
     }
 });
+headTeacherRouter.post('/removeTeacher', async function(req, res) {
+    const { id } = req.body;
+    try {
+        
+        await teacherDetails.deleteOne(id);
+        // Redirect to /head with login_id as query param
+        res.redirect(`/head?id=${login_id}&message=Teacher%20updated%20successfully`);
+    } catch (err) {
+        console.error("Error updating teacher:", err.message);
+        // Redirect with error message (optional)
+        res.redirect(`/head?error=${encodeURIComponent(err.message)}`);
+    }
+});
 
 // GET route to fetch teacher data and head data
 headTeacherRouter.get('/', async function(req, res) {

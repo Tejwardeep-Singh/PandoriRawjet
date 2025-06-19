@@ -191,7 +191,7 @@
     }
     #teacherPanel{
         height: 5vh;
-        width: 50%;
+        width: 80%;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -213,6 +213,12 @@
         display: none;
     }
     #teacherAdd{
+        display: none;
+    }
+    #teacherRemove{
+        display: none;
+    }
+    #teacherInfo{
         display: none;
     }
     .info{

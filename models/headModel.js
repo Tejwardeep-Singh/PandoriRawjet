@@ -25,7 +25,6 @@ async function registerUser(id, plainPassword) {
         // Check if the user already exists in the database
         const existingUser = await head.findOne({ id: id });
         if (existingUser) {
-            console.log("User already exists");
             return;
         }
 

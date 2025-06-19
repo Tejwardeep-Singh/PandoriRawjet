@@ -195,6 +195,25 @@ function teacherPanel(){
             duration:0.5
         })
     })
+    var tp3=document.querySelector("#tp3")
+    tp3.addEventListener("click",function(){
+        gsap.to(".teacherInfo",{
+            display:'none',
+            duration:0.5,
+        })
+        gsap.to("#teacherPanel h2",{
+            color:"#4E3629",
+            duration:0.5
+        })
+        gsap.to("#teacherRemove",{
+            display:'flex',
+            duration:0.5,
+        })
+        gsap.to("#tp3 ",{
+            color:"#111",
+            duration:0.5
+        })
+    })
 
 }
 teacherPanel()
