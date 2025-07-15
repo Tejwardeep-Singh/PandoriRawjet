@@ -14,6 +14,7 @@ const headDetailsSchema = mongoose.Schema({
         type:String,
     },
     mobile:Number,
+    age:Number,
     email:{
         type:String,
     },

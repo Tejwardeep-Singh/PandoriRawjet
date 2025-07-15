@@ -10,10 +10,10 @@ const section = require("../models/class");
 
 headRouter.post('/', uploadHead.single('image'), async function (req, res) {
     try {
-        const { name, fatherName, dob, dateOfJoining, mobile, email } = req.body;
+        const { name, fatherName, dob, dateOfJoining, age,mobile, email } = req.body;
         const image = req.file ? req.file.path : null; 
 
-        const updateData = { name, fatherName, dob, dateOfJoining, mobile, email };
+        const updateData = { name, fatherName, dob, dateOfJoining, age,mobile, email };
         if (image) updateData.image = image;
 
         const updatedUser = await HeadDetails.findOneAndUpdate(

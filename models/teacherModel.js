@@ -15,6 +15,7 @@ const teacherDetailsSchema = mongoose.Schema({
         type:String,
     },
     mobile:Number,
+    age:Number,
     email:{
         type:String,
     },

@@ -21,7 +21,7 @@ teacherRouter.post("/", uploadTeacher.single("image"), async (req, res) => {
         const decoded = jwt.verify(token, process.env.JWT_KEY);
         const login_id = decoded.login_id;
 
-        const { name, fatherName, dob, dateOfJoining, mobile, email } = req.body;
+        const { name, fatherName, dob, dateOfJoining, age,mobile, email } = req.body;
         const image = req.file ? req.file.path : null; // This will be Cloudinary URL
 
         const updatedUser = await teacherDetails.findOneAndUpdate(
@@ -31,6 +31,7 @@ teacherRouter.post("/", uploadTeacher.single("image"), async (req, res) => {
                 fatherName,
                 dob,
                 dateOfJoining,
+                age,
                 mobile,
                 email,
                 ...(image && { image }) // Only update image if uploaded
@@ -58,7 +59,7 @@ teacherRouter.get("/", async (req, res) => {
         const login_id = decoded.login_id;
 
         const teacher = await teacherDetails.findOne({ login_id: login_id });
-        const leave = await leaveRequestStudent.find();
+        const leave = await leaveRequestStudent.find({status:"pending"});
         const teacherLeaveDetails = await leaveRequestTeacher.find({ id: login_id });
 
         if (!teacher) {

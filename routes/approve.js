@@ -41,7 +41,7 @@ leaveRouter.post("/student", async function(req, res) {
             { status: "Approved" },
             { new: true }  // This option returns the updated document
         );
-
+        alert("leave approved");
         if (!updatedLeave) {
             return res.status(404).send("Leave request not found");
         }
