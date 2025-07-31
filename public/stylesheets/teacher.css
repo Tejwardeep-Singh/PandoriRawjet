@@ -379,7 +379,7 @@ display: none;
         align-items: flex-end;
         position: absolute;
         right: 2%;
-        top: 8%;
+        top: 15%;
         z-index: 998;
         height:fit-content;
         backdrop-filter: blur(10px);
@@ -430,4 +430,18 @@ display: none;
         font-size: 1.5vh;
         font-weight: 400;
     }
+    #marksPanel{
+        width: 100%;
+        padding: 0 5%;
+    }
+    #viewMarksPanel{
+        width: 100%;
+        padding: 0 5%;
+    }  
+    #viewMarksPanel h2{
+        font-size: 1.5vh;
+    }
+    #marksPanel h2{
+            font-size: 1.5vh;
+        }
 }

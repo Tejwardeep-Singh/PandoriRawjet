@@ -455,10 +455,10 @@
             justify-content: space-around;
             align-items: center;
             flex-wrap: nowrap;
-            gap: 1vh;
+            padding: 0 3%;
         }
         #teacherPanel h2{
-            font-size: 2.5vh;
+            font-size: 1.5vh;
         }
         #teacherBox{
             width: 100%;
@@ -529,5 +529,9 @@
         }
         .part h2{
             font-size: small;
+        }
+        #leaveRequest h2{
+            font-size: 1vh;
+            font-weight: 400;
         }
     }

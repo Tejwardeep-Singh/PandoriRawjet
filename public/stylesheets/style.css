@@ -470,7 +470,6 @@ nav{
     justify-content:space-around;
     align-items: center;
     backdrop-filter: blur(5px);
-    border: solid #111 2px;
     padding:0.5% 2%;
     overflow: hidden;
 }
