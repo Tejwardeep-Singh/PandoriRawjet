@@ -669,7 +669,7 @@ nav{
     }
     .nr-r i{
         display: flex;
-        font-size: 5vw;
+        font-size: 3vw;
         padding:0.5vw;
         justify-content: center;
         align-items: center;
@@ -744,11 +744,11 @@ nav{
         width: 90%;
         justify-content: start;
         align-items: start;
-        padding: 2% 5%;
+        padding:4% 0;
     }
 
     #footer p{
-        font-size: medium;
+        font-size:small;
     }
 
     .fl{
@@ -766,7 +766,7 @@ nav{
     }
 
     #footer h2{
-        font-size: large;
+        font-size:medium;
     }
 
     #footer-p{
@@ -783,14 +783,14 @@ nav{
     }
     
     #footer-p h5{
-        font-size:medium;
+        font-size:small;
         font-weight: 300;
         color: #111;
         text-wrap: wrap;
     }
     
     #footer-p h1{
-        font-size: 2.5vh;
+        font-size: 1.5vh;
         font-family: 800;
         color: #111;
     }

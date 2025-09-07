@@ -67,6 +67,7 @@ headRouter.get('/',isLoggedIn, async function(req, res) {
         if (!headDetails) {
             return res.status(404).send('Head Details not found');
         }
+
         res.render('head', {
             user: headDetails,
             user1: {},
