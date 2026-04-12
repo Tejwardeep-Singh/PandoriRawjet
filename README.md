@@ -13,7 +13,7 @@ Pandori is a full-stack school management system designed to simplify and automa
   <img src="https://img.shields.io/github/issues/Tejwardeep-Singh/PandoriRawjet?style=for-the-badge" />
 </p>
 <p align="center">
-  <a href="https://pandoriwaraich.onrender.com/">🔗Live</a> •
+  <a href="https://pandoriwaraich.onrender.com/">🔗Live</a>
 </p>
 
 ---
