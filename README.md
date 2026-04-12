@@ -1,12 +1,20 @@
-# 📚 Pandori – Smart School Management System
+<p align="center">
+  <img src="/screenshots/home.png" alt="E-Voting System Banner" width="100%" />
+</p>
 
+<h1 align="center">📚 Pandori – Smart School Management System</h1>
+
+<p align="center">
 Pandori is a full-stack school management system designed to simplify and automate administrative tasks such as student management, attendance tracking, marks management, and more. The platform provides role-based dashboards for Head, Teacher, and Student to ensure efficient and organized school operations.
-
----
-
-## 🚀 Live Demo
-
-👉 https://pandoriwaraich.onrender.com/
+</p>
+<p align="center">
+  <img src="https://img.shields.io/github/stars/Tejwardeep-Singh/PandoriRawjet?style=for-the-badge" />
+  <img src="https://img.shields.io/github/forks/Tejwardeep-Singh/PandoriRawjet?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues/Tejwardeep-Singh/PandoriRawjet?style=for-the-badge" />
+</p>
+<p align="center">
+  <a href="https://pandoriwaraich.onrender.com/">🔗Live</a> •
+</p>
 
 ---
 
