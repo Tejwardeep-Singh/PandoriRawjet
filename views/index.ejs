@@ -1,180 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/ico/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/ico/favicon-32x32.png">
-    <link rel="manifest" href="/images/ico/site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Fjalla+One&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>GPS PANDORI WARAICH | HOME</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>EduSync | Smart School Management Platform</title>
 </head>
+
 <body>
-    <main>
-        <nav>
-            <div class="nl">
-                <img src="/images/images/LOGO.webp" alt="">
-            </div>
-            <div class="nr">
-                <div class="nr-l">
-                    <a href="/">Home</a>
-                    <div id="login">
-                        <a href="#" id="log_button">Login</a>
-                        <div id="login_items">
-                            <a href="/studentlogin">Student Login</a>
-                            <a href="/teacherlogin">Teacher Login</a>
-                            <a href="/headlogin">Head Login</a>
-                        </div>
-                    </div>
-                    
-                    <a href="/images">Images</a>
-                </div>
-                <div class="nr-r">
-                    <i class="ri-menu-line"></i>
-                </div>
-            </div>
-        </nav>  
-        <div id="index-page">
-            <div id="title">
-                <div class="title-elem"><h3>P</h3></div>
-                <div class="title-elem"><h3>A</h3></div>
-                <div class="title-elem"><h3>N</h3></div>
-                <div class="title-elem"><h3>D</h3></div>
-                <div class="title-elem"><h3>O</h3></div>
-                <div class="title-elem"><h3>R</h3></div>
-                <div class="title-elem"><h3>I</h3></div>
-            </div>
-            <div id="title-2"><h4>GPS PANDORI WARAICH </h4></div>
-            <video src="/videos/index_video.mp4" autoplay loop></video>
+
+<div id="main">
+  <nav>
+
+    <div class="nav-left">
+      <img src="/images/images/LOGO.webp" alt="">
+      <h2>EduSync</h2>
+    </div>
+
+    <div class="nav-right">
+
+      <a href="/">Home</a>
+
+      <a href="#features">Features</a>
+
+      <a href="#portals">Portals</a>
+
+      <a href="/images">Gallery</a>
+
+      <div class="login-dropdown">
+
+        <button>
+          Login
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+
+        <div class="dropdown-menu">
+          <a href="/studentlogin">Student Login</a>
+          <a href="/teacherlogin">Teacher Login</a>
+          <a href="/headlogin">Admin Login</a>
         </div>
-        <div id="login-page">
-            <h1>Login</h1>
-            <div id="login-page-container">
-                <a href="/headlogin">
-                    <div class="login">
-                        <i class="ri-admin-fill"></i>
-                        <h2>Head Login</h2>
-                    </div>
-                </a>
-                <a href="/teacherLogin">
-                    <div class="login">
-                        <i class="ri-user-settings-fill"></i>
-                        <h2>Teacher Login</h2>
-                    </div>
-                </a>
-                <a href="/studentLogin">
-                    <div class="login">
-                        <i class="ri-graduation-cap-fill"></i>
-                        <h2>Student Login</h2>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div id="page2">
-            <div id="labs">
-                <h1>ABOUT SCHOOL</h1>
-                <p>GPS PANDORI WARAICH, BLOACK-AMRITSAR 2 <br> managed by <span>CHT SOHAN SINGH</span><br>
-                is on it's way to achieve dream of educating students of Punjab</p>
-            </div>
-            <div id="rabs">
-                <img src="/images/images/school_front.jpg" alt="">
-            </div>
-        </div>
-        <div id="horizontal-ruler"></div>
-        <div id="page3">
-            <div id="lh">
-                <img src="/images/images/l-2-s.png" alt="" id="layer" >
-                <img src="/images/images/bg.png" alt="" id="layer2">
-            </div>
-            <div id="rh">
-                <h1>SCHOOL HEAD</h1>
-                <p>The modern world is a Competitive world and require the products which are compatible 
-                    with its diversity and excellence. Keeping these in mind, the  School plans its pedagogy.
-                     Besides the usual syllabi effective planning is done to chisel the students in their best potential not 
-                     only in academic but also in other activities. Every effort is made by my dedicated staff to make the end 
-                     product a blend of educational physical and cultural expert, Keeping in mind the mid path of Modernity and
-                      tradition. I pray to the mighty to give the best to our institution, so that the student coming out of our
-                       institution are filled with Uniqueness. </p>
-            </div>
-        </div>
-        <div id="page3-blur">
-        </div>
-        <div id="page4">
-            <h1>GALLERY</h1>
-            <div id="moving-div">
-                <div class="blur-left"></div>
-                <div class="move">
-                    <img src="/images/images/p1.jpg" alt="">
-                    <img src="/images/images/p2.jpg" alt="">
-                    <img src="/images/images/p3.jpg" alt="">
-                    <img src="/images/images/p4.jpg" alt="">
-                    <img src="/images/images/p5.jpg" alt="">
-                    <img src="/images/images/p6.jpg" alt="">    
-                </div>
-                <div class="move">
-                    <img src="/images/images/p1.jpg" alt="">
-                    <img src="/images/images/p2.jpg" alt="">
-                    <img src="/images/images/p3.jpg" alt="">
-                    <img src="/images/images/p4.jpg" alt="">
-                    <img src="/images/images/p5.jpg" alt="">
-                    <img src="/images/images/p6.jpg" alt="">
-                </div>
-                <div class="blur-right"></div>
-            </div>
-            
-        </div>
-        <div id="page4-blur">
-        </div>
-        <div id="page4a">
-            <div id="videos">
-                
-                <video loop muted controls src="/images/videos/V1.mp4"></video>
-                <video loop muted controls src="/images/videos/V2.mp4"></video>
-            </div>
-        </div>
-        <div id="horizontal-ruler"></div>
-        <div id="footer">
-            <div id="footer-container">
-                <div class="fl">
-                    <h2>CONTACT US</h2>
-                    <div class="contact">
-                        <h4>9780914581 (Head)</h4>
-                        <h4>sandeepsinghsohian@gmail.com</h4>
-                    </div>
-                </div>
-                <div class="fc">
-                    <div class="quick-links">
-                        <h2>Quick Links</h2>
-                        <div class="contact">
-                            <a href="/">Home</a>
-                            <a href="/images">Images</a>
-                            </div>
-                    </div>
-                </div>
-                <div class="fr">
-                    <h2>Location</h2>
-                    <div class="contact">
-                        <div id="map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d548.6914284465247!2d74.90983231549603!3d31.690628893253695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919638655ecf77d%3A0x482bc38508456636!2sGovernment%20Elementary%20Smart%20School!5e1!3m2!1sen!2sin!4v1711472732719!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>  
-        </div>
-        <div id="horizontal-ruler"></div>
-        <div id="copywright">
-            <h3>@2025 Team Rawjet. All Rights Reserved.</h3>
-        </div>
-</main>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+
+  <section id="hero">
+
+    <video autoplay muted loop playsinline>
+      <source src="/videos/index_video.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+      <span>Modern Education Infrastructure</span>
+
+      <h1>
+        Synchronizing <br>
+        Modern Education
+      </h1>
+
+      <p>
+        EduSync is a modern institution management platform
+        built to simplify administration, academics,
+        attendance, examinations, and communication.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="/studentlogin" class="primary-btn">
+          Student Portal
+        </a>
+
+        <a href="/teacherlogin" class="secondary-btn">
+          Teacher Portal
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+
+  <section id="features">
+
+    <div class="section-title">
+      <span>FEATURES</span>
+      <h2>Everything Your Institution Needs</h2>
+    </div>
+
+    <div class="feature-container">
+
+      <div class="feature-card">
+        <i class="ri-user-3-fill"></i>
+        <h3>Student Management</h3>
+        <p>
+          Manage student records, attendance,
+          performance, and academic workflows.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <i class="ri-book-open-fill"></i>
+        <h3>Examination System</h3>
+        <p>
+          Conduct and manage examinations,
+          marks, and academic reports efficiently.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <i class="ri-team-fill"></i>
+        <h3>Teacher Dashboard</h3>
+        <p>
+          Empower faculty with streamlined
+          academic and classroom tools.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <i class="ri-bar-chart-fill"></i>
+        <h3>Analytics</h3>
+        <p>
+          Gain insights into academic performance
+          and institutional growth.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= DASHBOARD ================= -->
+
+  <section id="dashboard-preview">
+
+    <div class="dashboard-left">
+
+      <span>DASHBOARD</span>
+
+      <h2>
+        One Platform. <br>
+        Complete Control.
+      </h2>
+
+      <p>
+        EduSync provides centralized control for
+        administrators, teachers, and students
+        through a unified management system.
+      </p>
+
+    </div>
+
+    <div class="dashboard-right">
+
+      <img src="/images/images/dashboard.png" alt="Dashboard">
+
+    </div>
+
+  </section>
+
+  <!-- ================= PORTALS ================= -->
+
+  <section id="portals">
+
+    <div class="section-title">
+      <span>ACCESS</span>
+      <h2>Platform Portals</h2>
+    </div>
+
+    <div class="portal-container">
+
+      <a href="/studentlogin" class="portal-card">
+
+        <i class="ri-graduation-cap-fill"></i>
+
+        <h3>Student Portal</h3>
+
+        <p>
+          Access attendance, marks,
+          notices, and academic records.
+        </p>
+
+      </a>
+
+      <a href="/teacherlogin" class="portal-card">
+
+        <i class="ri-user-settings-fill"></i>
+
+        <h3>Teacher Portal</h3>
+
+        <p>
+          Manage students, examinations,
+          classes, and reports.
+        </p>
+
+      </a>
+
+      <a href="/headlogin" class="portal-card">
+
+        <i class="ri-admin-fill"></i>
+
+        <h3>Administration</h3>
+
+        <p>
+          Full institutional management
+          and system administration.
+        </p>
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- ================= STATS ================= -->
+
+  <section id="stats">
+
+    <div class="stat-box">
+      <h2>5000+</h2>
+      <p>Students Managed</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>200+</h2>
+      <p>Teachers Connected</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>24/7</h2>
+      <p>Platform Access</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>99%</h2>
+      <p>System Reliability</p>
+    </div>
+
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+
+        <h2>EduSync</h2>
+
+        <p>
+          A modern education management platform
+          designed for institutions of the future.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h3>Quick Links</h3>
+
+        <a href="/">Home</a>
+        <a href="#features">Features</a>
+        <a href="#portals">Portals</a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h3>Portals</h3>
+
+        <a href="/studentlogin">Student</a>
+        <a href="/teacherlogin">Teacher</a>
+        <a href="/headlogin">Head</a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 EduSync. All Rights Reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+</div>
+
 <script src="/javascripts/script.js"></script>
+
 </body>
 </html>
