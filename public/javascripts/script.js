@@ -1,102 +1,311 @@
-function loader(){
-    var tl=gsap.timeline()
-    var grow=0
-    setInterval(function(){
-        if(grow<100){
-            h5timer.innerHTML=grow++
-        }
-        else{
-            h5timer.innerHTML=grow
-        }
-    })
-    tl.from(".title-elem",{
-        y:"100%",
-        scale:0.1,
-        duration:0.4,
-        stagger:0.2
-    })
-    tl.from("#title-2 h4",{
+gsap.from(".hero-subtitle",{
+
+    y:40,
+
+    opacity:0,
+
+    duration:1
+
+});
+
+gsap.from(".hero-content h1",{
+
+    y:70,
+
+    opacity:0,
+
+    duration:1.2,
+
+    delay:.3
+
+});
+
+gsap.from(".hero-content h3",{
+
+    y:60,
+
+    opacity:0,
+
+    duration:1,
+
+    delay:.6
+
+});
+
+gsap.from(".hero-text",{
+
+    y:40,
+
+    opacity:0,
+
+    duration:1,
+
+    delay:.9
+
+});
+
+gsap.from(".hero-buttons",{
+
+    y:40,
+
+    opacity:0,
+
+    duration:1,
+
+    delay:1.2
+
+});
+gsap.utils.toArray(".portal-card").forEach(card=>{
+
+    gsap.from(card,{
+
+        scrollTrigger:card,
+
+        y:80,
+
         opacity:0,
-        y:"100%",
-        duration:0.4,
-    })
-    tl.from(".nl img",{
-        y:"300%",
-        opacity:0,
-        duration:1
-    })
-    tl.from(".line h1",{
-        y:"300%",
-        duration:1,
-        stagger:"0.5",
-    })
-    tl.from(".nr-r",{
-        y:"300%",
-        duration:1,
-        opacity:0,
-    })
-    tl.from(".nr-l a",{
-        x:"300%",
-        duration:1,
-        opacity:0,
-        stagger:"-0.5"
-    })
-    tl.from("nav",{
-        backgroundColor:"transparent",
-        duration:0.5
-    })
-    tl.from(".pg1-text h2",{
-        y:"300%",
-        duration:0.5,
-        opacity:0,
-        stagger:"0.5"
-    })
-}   
-function page1(){
-    gsap.to(".title-elem", {
-    z: -100,
-    rotate: 60,
-    opacity: 0,
-    duration: 2,
-    stagger: 0.5,
-    scale:"1.5",
-    scrollTrigger: {
-        trigger: "#title",
-        scroller: "body", // only needed if using a custom scroller (e.g., with Locomotive Scroll)
-        scrub: 2,
-        pin: true,
-    }
-    });
-}
-page1()
-function page2(){
-    gsap.from("#labs", {
-        x: -100,
-        y: 100,
-        opacity: 0,
-        duration: 2,
-        delay:0.5,
-        scrollTrigger: {
-            trigger: "#labs",
-            start: "top 80%",  // example: start when #labs top hits 80% of viewport height
-            toggleActions: "play none none none" // plays once on entering viewport
-        }
-    });
-    gsap.from("#rabs", {
-        x: 100,
-        y: 100,
-        opacity: 0,
-        duration: 2,
-        delay:1,
-        scrollTrigger: {
-            trigger: "#rabs",
-            start: "top 80%",  // example: start when #labs top hits 80% of viewport height
-            toggleActions: "play none none none" // plays once on entering viewport
-        }
+
+        duration:0.8
+
     });
 
+});
+
+gsap.from(".about-image",{
+
+    scrollTrigger:"#about",
+
+    x:-120,
+
+    opacity:0,
+
+    duration:1
+
+});
+
+gsap.from(".about-content",{
+
+    scrollTrigger:"#about",
+
+    x:120,
+
+    opacity:0,
+
+    duration:1
+
+});
+const counters=document.querySelectorAll(".counter");
+
+counters.forEach(counter=>{
+
+const update=()=>{
+
+const target=+counter.dataset.target;
+
+const current=+counter.innerText;
+
+const increment=target/120;
+
+if(current<target){
+
+counter.innerText=Math.ceil(current+increment);
+
+setTimeout(update,15);
+
 }
-page2()
+
+else{
+
+counter.innerText=target+"+";
+
+}
+
+}
+
+ScrollTrigger.create({
+
+trigger:"#stats",
+
+start:"top 80%",
+
+once:true,
+
+onEnter:update
+
+});
+
+});
+gsap.utils.toArray(".facility-card").forEach(card => {
+
+    gsap.from(card, {
+
+        y: 80,
+
+        opacity: 0,
+
+        duration: 0.8,
+
+        scrollTrigger: {
+
+            trigger: card,
+
+            start: "top 85%"
+
+        }
+
+    });
+
+});
+
+// gsap.from(".gallery-grid img", {
+//     scale: 0.8,
+//     opacity: 0,
+//     duration: 0.8,
+//     stagger: 0.15,
+//     scrollTrigger: {
+//         trigger: "#gallery-preview",
+//         start: "top 80%",
+//         toggleActions: "play none none none",
+//         markers: true
+//     }
+// });
+gsap.from(".video-grid video", {
+
+    y: 100,
+
+    opacity: 0,
+
+    duration: 1,
+
+    stagger: 0.2,
+
+    scrollTrigger: {
+
+        trigger: "#campus-video",
+
+        start: "top 80%"
+
+    }
+
+});
+
+// gsap.from("#admission-banner", {
+
+//     y: 100,
+
+//     opacity: 0,
+
+//     duration: 1,
+
+//     scrollTrigger: {
+
+//         trigger: "#admission-banner",
+
+//         start: "top 85%"
+
+//     }
+
+// });
+
+// function loader(){
+//     var tl=gsap.timeline()
+//     var grow=0
+//     setInterval(function(){
+//         if(grow<100){
+//             h5timer.innerHTML=grow++
+//         }
+//         else{
+//             h5timer.innerHTML=grow
+//         }
+//     })
+//     tl.from(".title-elem",{
+//         y:"100%",
+//         scale:0.1,
+//         duration:0.4,
+//         stagger:0.2
+//     })
+//     tl.from("#title-2 h4",{
+//         opacity:0,
+//         y:"100%",
+//         duration:0.4,
+//     })
+//     tl.from(".nl img",{
+//         y:"300%",
+//         opacity:0,
+//         duration:1
+//     })
+//     tl.from(".line h1",{
+//         y:"300%",
+//         duration:1,
+//         stagger:"0.5",
+//     })
+//     tl.from(".nr-r",{
+//         y:"300%",
+//         duration:1,
+//         opacity:0,
+//     })
+//     tl.from(".nr-l a",{
+//         x:"300%",
+//         duration:1,
+//         opacity:0,
+//         stagger:"-0.5"
+//     })
+//     tl.from("nav",{
+//         backgroundColor:"transparent",
+//         duration:0.5
+//     })
+//     tl.from(".pg1-text h2",{
+//         y:"300%",
+//         duration:0.5,
+//         opacity:0,
+//         stagger:"0.5"
+//     })
+// }   
+// function page1(){
+//     gsap.to(".title-elem", {
+//     z: -100,
+//     rotate: 60,
+//     opacity: 0,
+//     duration: 2,
+//     stagger: 0.5,
+//     scale:"1.5",
+//     scrollTrigger: {
+//         trigger: "#title",
+//         scroller: "body", // only needed if using a custom scroller (e.g., with Locomotive Scroll)
+//         scrub: 2,
+//         pin: true,
+//     }
+//     });
+// }
+// page1()
+// function page2(){
+//     gsap.from("#labs", {
+//         x: -100,
+//         y: 100,
+//         opacity: 0,
+//         duration: 2,
+//         delay:0.5,
+//         scrollTrigger: {
+//             trigger: "#labs",
+//             start: "top 80%",  // example: start when #labs top hits 80% of viewport height
+//             toggleActions: "play none none none" // plays once on entering viewport
+//         }
+//     });
+//     gsap.from("#rabs", {
+//         x: 100,
+//         y: 100,
+//         opacity: 0,
+//         duration: 2,
+//         delay:1,
+//         scrollTrigger: {
+//             trigger: "#rabs",
+//             start: "top 80%",  // example: start when #labs top hits 80% of viewport height
+//             toggleActions: "play none none none" // plays once on entering viewport
+//         }
+//     });
+
+// }
+// page2()
 function nav(){
     var nav=document.querySelector(".nr-r i")
     var log=document.querySelector("#log_button")
