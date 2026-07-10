@@ -20,7 +20,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-// ✅ POST route: Create/update teacher, then redirect to /head with teacher ID
 headTeacherRouter.post('/', upload.single('image'), async function(req, res) {
     const { login_id, name, fatherName, dob, dateOfJoining, mobile, email } = req.body;
     const image = req.file ? req.file.path : null;

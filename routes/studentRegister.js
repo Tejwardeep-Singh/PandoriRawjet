@@ -112,4 +112,34 @@ studentRegisterRouter.get("/", function (req, res) {
     });
 });
 
+
+studentRegisterRouter.post(
+"/updateStudent/:id",
+uploadStudent.single("image"),
+async(req,res)=>{
+
+const student=await studentModel.findById(req.params.id);
+
+student.name=req.body.name;
+student.fatherName=req.body.fatherName;
+student.motherName=req.body.motherName;
+student.city=req.body.city;
+student.state=req.body.state;
+student.mobile=req.body.mobile;
+student.email=req.body.email;
+student.age=req.body.age;
+student.dob=req.body.dob;
+
+if(req.file){
+
+student.image=req.file.path;
+
+}
+
+await student.save();
+
+res.redirect("/teacher");
+
+});
+
 module.exports = studentRegisterRouter;

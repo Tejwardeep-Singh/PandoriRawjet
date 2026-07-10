@@ -148,6 +148,16 @@ teacherRouter.get("/", async (req, res) => {
         return res.redirect("/teacherLogin");
     }
 });
+teacherRouter.get("/editStudent/:id", async (req,res)=>{
+
+    const student = await Student.findById(req.params.id);
+
+    res.render("updateStudent",{
+        student
+    });
+
+});
+
 
 module.exports = teacherRouter;
 
