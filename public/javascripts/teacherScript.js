@@ -201,23 +201,6 @@ function studentPanel(){
 }
 studentPanel()
 function examPanel(){
-    var ep1=document.querySelector("#ep1");
-    ep1.addEventListener("click",function(){
-        gsap.to(".exams",{
-            display:'none',
-            duration:0.5,
-        })
-        gsap.to("#examBox",{
-            display:'flex',
-            duration:0.5,
-        })
-        gsap.to("#datesheetUpload",{
-            display:'flex',
-            duration:0.5,
-        })
-        // Save sub-panel state
-        localStorage.setItem('teacherActiveSubPanel', 'datesheetUpload');
-    })
     var ep2=document.querySelector("#ep2");
     ep2.addEventListener("click",function(){
         gsap.to(".exams",{
