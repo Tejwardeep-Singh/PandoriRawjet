@@ -106,7 +106,7 @@ teacherRouter.get("/", async (req, res) => {
             if (incharge) {
 
                 const totalStudents = await Student.countDocuments({
-                    name: nameValue,
+                    class: nameValue,
                     section: sectionValue
                 });
 
@@ -123,6 +123,7 @@ teacherRouter.get("/", async (req, res) => {
                     sectionAssigned: sectionValue
                 };
             }
+            
         
 
         if (!teacher) {
