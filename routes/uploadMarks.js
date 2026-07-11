@@ -441,8 +441,6 @@ marksRouter.get("/studentClass/exportReport", async (req, res) => {
     res.status(500).send("Failed to export student report.");
   }
 });
-
-
 marksRouter.get('/', async (req, res) => {
   const { nameValue, sectionValue, exam_type, total,date } = req.query;
 
@@ -476,6 +474,63 @@ marksRouter.get('/', async (req, res) => {
     res.status(500).send("Couldn't load marks page.");
   }
 });
+marksRouter.get("/editMarks", async (req, res) => {
+  const {
+    nameValue,
+    sectionValue,
+    exam_type,
+    total,
+    date
+  } = req.query;
 
+  try {
+
+    const students = await studentDetails.find({
+      class: nameValue,
+      section: sectionValue
+    });
+
+    const subjects = await subjectClass.find({
+      class: nameValue,
+      section: sectionValue
+    });
+
+    const existingMarks = await Marks.find({
+      class: nameValue,
+      section: sectionValue,
+      exam_type,
+      date
+    });
+
+    // student_id => { subject : marks }
+    const marksMap = {};
+
+    existingMarks.forEach(mark => {
+      const sid = mark.student_id;
+
+      if (!marksMap[sid]) {
+        marksMap[sid] = {};
+      }
+
+      marksMap[sid] = Object.fromEntries(mark.marks);
+    });
+
+    res.render("marksEnter", {
+      students,
+      subjects,
+      marksMap,
+      nameValue,
+      sectionValue,
+      exam_type,
+      total: existingMarks[0]?.total || "",
+      date,
+      edit: true
+    });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Couldn't load edit page.");
+  }
+});
 
 module.exports=marksRouter;

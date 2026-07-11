@@ -44,7 +44,7 @@
         </nav>  
         <div id="page1">
             <div id="pg1-container">
-                <h1>Marks Entry Portal</h1>
+                <h1><%= edit ? "EDIT MARKS" : "ENTER MARKS" %></h1>
                 <h2><%= exam_type %> Exams</h2>
                 <form action="/uploadMarks/upload" method="POST">
                     <input type="hidden" name="nameValue" value="<%= nameValue %>">
@@ -66,28 +66,34 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <% students.forEach(function(student,index){
-                            const studentStr = 'id_' + student.id.toString();
+                            <% students.forEach(function(student, index){ 
+                                const studentId = student.id.toString();      // For lookup
+                                const studentStr = "id_" + studentId;         // For form names
                             %>
+
                             <tr>
                                 <td id="sno"><%= index + 1 %></td>
                                 <td><%= student.id %></td>
                                 <td id="name"><%= student.name %></td>
                                 <td><%= student.fatherName %></td>
-                                <% subjects.forEach(subject => {
-                                const mark = (marksMap[studentStr] && marksMap[studentStr][subject.name]) || '00';
+
+                                <% subjects.forEach(function(subject){ 
+                                    const mark = (marksMap[studentId] && marksMap[studentId][subject.name]) || "00";
                                 %>
+
                                 <td>
-                                    <input 
-                                    type="number" 
-                                    name="marks[<%= studentStr %>][<%= subject.name %>]" 
-                                    value="<%= mark %>" 
-                                    >
+                                    <input
+                                        type="number"
+                                        name="marks[<%= studentStr %>][<%= subject.name %>]"
+                                        value="<%= mark %>">
                                 </td>
+
                                 <% }) %>
+
                             </tr>
-                        <% }) %>
-                        </tbody>
+
+                            <% }) %>
+                            </tbody>
                     </table>
 
                     <button type="submit">Submit Marks</button>

@@ -112,8 +112,96 @@ input[type="number"]:focus {
 button:hover {
   background-color: #6b4e3e;
 }
+.report-actions{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    margin:40px 0 20px;
+    flex-wrap:wrap;
+}
 
-@media (max-width: 768px) {
+.report-actions form{
+    width:auto;
+    margin:0;
+}
+
+.action-btn{
+
+    min-width:220px;
+    height:55px;
+
+    padding:0 28px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+
+    border:none;
+    border-radius:5px;
+
+    font-family:"Exo 2",sans-serif;
+    font-size:17px;
+    font-weight:600;
+
+    color:white;
+
+    cursor:pointer;
+
+    white-space:nowrap;
+
+    transition:all .25s ease;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+
+.action-btn i{
+    font-size:20px;
+}
+
+.action-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 24px rgba(0,0,0,.18);
+}
+
+.edit-btn{
+
+    background:#6B4E3D;
+}
+
+.edit-btn:hover{
+
+    background:#5A4032;
+}
+
+.excel-btn{
+
+    background:#7A7D00;
+}
+
+.excel-btn:hover{
+
+    background:#666800;
+}
+
+@media(max-width:1200px){
+
+.report-actions{
+
+    gap:15px;
+}
+
+.action-btn{
+
+    width:260px;
+    min-width:260px;
+}
+}
+@media (max-width:1200px) {
     #page1{
         margin-top: 10vh;
     }
@@ -185,3 +273,7 @@ button:hover {
     }
 }
 
+
+.marksPage{
+  height: 100vh !important; 
+}

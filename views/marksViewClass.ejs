@@ -42,7 +42,7 @@
                 </div> -->
             </div>
         </nav>  
-        <div id="page1">
+        <div id="page1" class="marksPage">
             <div id="pg1-container">
                 <h1>CLASS REPORT</h1>
                 <h2><%= exam_type %> Exams</h2>
@@ -76,13 +76,32 @@
                     <% }) %>
                     </tbody>
                 </table>
-                <form action="/uploadMarks/class/exportReport" method="GET">
-                    <input type="hidden" name="classValue" value="<%= nameValue %>">
-                    <input type="hidden" name="sectionValue" value="<%= sectionValue %>">
-                    <input type="hidden" name="exam_type" value="<%= exam_type %>">
-                    <input type="hidden" name="date" value="<%= newDate %>">
-                    <button type="submit">Download Excel Report</button>
-                </form>
+                <div class="report-actions">
+                    <form action="/uploadMarks/editMarks" method="GET">
+                        <input type="hidden" name="nameValue" value="<%= nameValue %>">
+                        <input type="hidden" name="sectionValue" value="<%= sectionValue %>">
+                        <input type="hidden" name="exam_type" value="<%= exam_type %>">
+                        <input type="hidden" name="date" value="<%= newDate %>">
+
+                        <button type="submit" class="action-btn edit-btn">
+                            <i class="ri-edit-line"></i>
+                            <span>Edit Marks</span>
+                        </button>
+                    </form>
+
+                    <form action="/uploadMarks/class/exportReport" method="GET">
+                        <input type="hidden" name="classValue" value="<%= nameValue %>">
+                        <input type="hidden" name="sectionValue" value="<%= sectionValue %>">
+                        <input type="hidden" name="exam_type" value="<%= exam_type %>">
+                        <input type="hidden" name="date" value="<%= newDate %>">
+
+                        <button type="submit" class="action-btn excel-btn">
+                            <i class="ri-file-excel-2-line"></i>
+                            <span>Download Excel</span>
+                        </button>
+                    </form>
+
+                </div>
             </div>
         </div>
         <!-- <div id="footer">
@@ -113,7 +132,7 @@
                 </div>
             </div>  
         </div> -->
-        <div id="horizontal-ruler"></div>
+        <!-- <div id="horizontal-ruler"></div> -->
         <div id="copywright">
             <h3>@2026 Team Rawjet. All Rights Reserved.</h3>
         </div>
