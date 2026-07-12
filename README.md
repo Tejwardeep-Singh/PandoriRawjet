@@ -17,6 +17,18 @@ EduSync is a full-stack school management system designed to simplify and automa
 </p>
 
 ---
+## ✨ Highlights
+
+- 🔐 Secure Role-Based Authentication
+- 📊 Complete Student Information Management
+- 📝 Examination & Marks Management
+- 📅 Attendance & Datesheet Management
+- ☁️ Cloudinary Image Uploads
+- 📂 MongoDB Database Integration
+- ⚡ Dynamic UI Updates
+- 📱 Responsive Design
+- 🚀 Deployed on Render
+
 
 ## 🧠 Features
 
