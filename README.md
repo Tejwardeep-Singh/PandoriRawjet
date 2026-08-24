@@ -161,7 +161,7 @@ Contributions are welcome! Feel free to fork the repository and submit a pull re
 
 * GitHub: https://github.com/Tejwardeep-Singh
 * LinkedIn: https://www.linkedin.com/in/tejwardeep-singh/
-* Contact - tejwardeep@gmail.com
+* Contact - rawjet1505@gmail.com
 
 ---
 
